@@ -8,9 +8,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.RectF;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -32,6 +29,10 @@ import com.nineoldandroids.view.ViewHelper;
 
 import net.simonvt.menudrawer.MenuDrawer;
 
+import laundervendorapp.spinno.com.grofermaterialdesign.adapters.PagerAdapter;
+import laundervendorapp.spinno.com.grofermaterialdesign.customview.playstandclasses.AlphaForegroundColorSpan;
+import laundervendorapp.spinno.com.grofermaterialdesign.customview.playstandclasses.ScrollTabHolder;
+
 public class MainActivity extends ActionBarActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener {
 
     private static AccelerateDecelerateInterpolator sSmoothInterpolator = new AccelerateDecelerateInterpolator();
@@ -40,7 +41,7 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
     private View mHeader;
     private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private ViewPager mViewPager;
-    private PagerAdapter mPagerAdapter;
+    PagerAdapter mPagerAdapter;
     private Toolbar toolbar;
     private TextView title;
     private ImageView icon;
@@ -293,50 +294,6 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
 
 
 
-
-
-
-
-    public class PagerAdapter extends FragmentPagerAdapter {
-
-        private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
-        private final String[] TITLES = { "Fruits", "Veges", "Body Care", "Pet Care", "Baby care", "Audio"};
-        private ScrollTabHolder mListener;
-
-        public PagerAdapter(FragmentManager fm) {
-            super(fm);
-            mScrollTabHolders = new SparseArrayCompat<ScrollTabHolder>();
-        }
-
-        public void setTabHolderScrollingContent(ScrollTabHolder listener) {
-            mListener = listener;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return TITLES[position];
-        }
-
-        @Override
-        public int getCount() {
-            return TITLES.length;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            ScrollTabHolderFragment fragment = (ScrollTabHolderFragment) ScrollViewFragment.newInstance(position);
-            mScrollTabHolders.put(position, fragment);
-            if (mListener != null) {
-                fragment.setScrollTabHolder(mListener);
-            }
-            return fragment;
-        }
-
-        public SparseArrayCompat<ScrollTabHolder> getScrollTabHolders() {
-            return mScrollTabHolders;
-        }
-
-    }
 
 
 

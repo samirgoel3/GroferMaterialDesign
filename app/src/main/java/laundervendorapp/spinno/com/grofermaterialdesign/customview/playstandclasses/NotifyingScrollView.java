@@ -1,4 +1,4 @@
-package laundervendorapp.spinno.com.grofermaterialdesign;
+package laundervendorapp.spinno.com.grofermaterialdesign.customview.playstandclasses;
 
 import android.content.Context;
 import android.util.AttributeSet;
