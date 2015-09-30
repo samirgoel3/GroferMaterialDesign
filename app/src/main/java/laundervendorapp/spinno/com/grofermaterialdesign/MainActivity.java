@@ -3,6 +3,7 @@ package laundervendorapp.spinno.com.grofermaterialdesign;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.RectF;
@@ -23,9 +24,9 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.astuetz.PagerSlidingTabStrip;
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.nineoldandroids.view.ViewHelper;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 import net.simonvt.menudrawer.MenuDrawer;
 
@@ -39,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
 
     private KenBurnsView mHeaderPicture;
     private View mHeader;
-    private PagerSlidingTabStrip mPagerSlidingTabStrip;
+    private SmartTabLayout mPagerSlidingTabStrip;
     private ViewPager mViewPager;
     PagerAdapter mPagerAdapter;
     private Toolbar toolbar;
@@ -57,12 +58,12 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
     private AlphaForegroundColorSpan mAlphaForegroundColorSpan;
 
     int[] photos={R.drawable.photo1, R.drawable.phpto2,R.drawable.photo3};
-    ImageView imageView;
+    ImageView imageView  , search ;
 
     ////////////////////////////////////////////////////
     private MenuDrawer mDrawer;
 
-    int images[] = {R.drawable.photo1 , R.drawable.photo3 , R.drawable.phpto2 , R.drawable.photo4,R.drawable.photo1 , R.drawable.photo3 , R.drawable.phpto2 , R.drawable.photo4};
+    int images[] = {R.drawable.photo1 , R.drawable.photo3 , R.drawable.phpto2 , R.drawable.photo1,R.drawable.photo1 , R.drawable.photo3 , R.drawable.phpto2 , R.drawable.photo4};
 
 
 
@@ -83,9 +84,11 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
         title = (TextView) findViewById(R.id.title);
         mSpannableString = new SpannableString(getString(R.string.actionbar_title));
 
+        search = (ImageView) findViewById(R.id.search);
+
         mHeaderLogo = (ImageView) findViewById(R.id.header_thumbnail);
         mHeader = findViewById(R.id.header);
-        mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        mPagerSlidingTabStrip = (SmartTabLayout) findViewById(R.id.tabs);
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setOffscreenPageLimit(4);
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
@@ -96,6 +99,7 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
         mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
         ViewHelper.setAlpha(getActionBarIconView(), 0f);
 
+
         getSupportActionBar().setBackgroundDrawable(null);
 
 
@@ -104,6 +108,14 @@ public class MainActivity extends ActionBarActivity implements ScrollTabHolder, 
             @Override
             public void onClick(View view) {
                 mDrawer.toggleMenu();
+            }
+        });
+
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this , SearchActivity.class));
             }
         });
 

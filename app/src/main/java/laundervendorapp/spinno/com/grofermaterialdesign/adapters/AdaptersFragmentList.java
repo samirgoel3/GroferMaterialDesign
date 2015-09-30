@@ -5,7 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 
+import com.easyandroidanimations.library.BounceAnimation;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import laundervendorapp.spinno.com.grofermaterialdesign.R;
 
@@ -50,14 +54,18 @@ public class AdaptersFragmentList  extends BaseAdapter {
         }
 
 
-
-
+        new BounceAnimation(holder.productimage)
+                .setBounceDistance(50)
+                .setDuration(500)
+                .animate();
 
         return view;
     }
 
 
     static class ViewHolder {
+
+        @Bind(R.id.productimage)ImageView  productimage ;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

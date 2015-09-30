@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GroferMaterialDesign.iml" filepath="$PROJECT_DIR$/GroferMaterialDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flipCheckBox/flipCheckBox.iml" filepath="$PROJECT_DIR$/flipCheckBox/flipCheckBox.iml" />
       <module fileurl="file://$PROJECT_DIR$/menudrawer/menudrawer.iml" filepath="$PROJECT_DIR$/menudrawer/menudrawer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smarttab/smarttab.iml" filepath="$PROJECT_DIR$/smarttab/smarttab.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewanimation/viewanimation.iml" filepath="$PROJECT_DIR$/viewanimation/viewanimation.iml" />
     </modules>
   </component>

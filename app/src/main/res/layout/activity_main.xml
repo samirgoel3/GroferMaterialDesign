@@ -29,15 +29,39 @@
             android:layout_gravity="center"
             android:src="@drawable/header_thumbnail" />
 
-        <com.astuetz.PagerSlidingTabStrip
+
+
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="48dip"
+            android:layout_height="48dp"
             android:layout_gravity="bottom"
-            android:textColor="#ffffff"
-            app:pstsIndicatorColor="#ffffff"
-            app:pstsDividerColor="@android:color/transparent"
-            android:background="@android:color/transparent" />
+            app:stl_indicatorAlwaysInCenter="false"
+            app:stl_indicatorWithoutPadding="false"
+            app:stl_indicatorInFront="false"
+            app:stl_indicatorInterpolation="smart"
+            app:stl_indicatorGravity="center"
+            app:stl_indicatorColor="#e74c3c"
+            app:stl_indicatorThickness="25dp"
+            app:stl_indicatorCornerRadius="5dp"
+            app:stl_overlineColor="#4D000000"
+            app:stl_overlineThickness="0dp"
+            app:stl_underlineColor="#4D000000"
+            app:stl_underlineThickness="10dp"
+            app:stl_dividerColor="#4D000000"
+            app:stl_dividerThickness="0dp"
+            app:stl_defaultTabBackground="?attr/selectableItemBackground"
+            app:stl_defaultTabTextAllCaps="true"
+            app:stl_defaultTabTextColor="#ffffff"
+            app:stl_defaultTabTextSize="12sp"
+            app:stl_defaultTabTextHorizontalPadding="16dp"
+            app:stl_defaultTabTextMinWidth="0dp"
+            app:stl_distributeEvenly="false"
+            app:stl_clickable="true"
+            />
+
+
     </FrameLayout>
 
     <android.support.v7.widget.Toolbar
@@ -57,10 +81,27 @@
                 android:layout_height="44dp" />
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
+                android:layout_weight="1"
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+
+            <ImageView
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/search_icon"
+                android:layout_marginRight="15dp"
+                android:id="@+id/search"
+                android:layout_gravity="center|right"/>
+
+
+
+
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 

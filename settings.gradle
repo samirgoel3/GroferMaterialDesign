@@ -1,1 +1,2 @@
-include ':app', ':menudrawer', ':viewanimation'
+include ':app', ':menudrawer', ':viewanimation', ':smarttab'
+include ':flipCheckBox'

@@ -24,11 +24,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="2.3">
-            
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-               android:background="@drawable/header_thumbnail" />
+
+
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/productimage"
+                    android:background="@drawable/header_thumbnail" />
+
+
 
         </LinearLayout>
 
@@ -55,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="2 Piece"
-                geekui:customTypeface="fonts/AllerDisplay.ttf"
+                geekui:customTypeface="fonts/Aller_Lt.ttf"
                 android:textColor="@color/icons_8_muted_red_dark"/>
 
 
@@ -67,9 +73,9 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@color/icons_8_muted_red"/>
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/rupee_icon"/>
 
                 <laundervendorapp.spinno.com.grofermaterialdesign.customview.tyfacetextview.TypefaceTextView
                     android:layout_width="wrap_content"
@@ -99,8 +105,5 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
 
 </FrameLayout>
